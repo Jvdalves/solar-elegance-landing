@@ -1,96 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Solux Energy Premium Design System */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    /* Primary Colors - Deep Forest Green */
+    --background: 156 79% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    /* Card - Slightly lighter green for depth */
+    --card: 156 60% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    /* Popover */
+    --popover: 156 60% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary - Deep Green */
+    --primary: 156 79% 8%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    /* Secondary - Muted Green */
+    --secondary: 156 40% 16%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted */
+    --muted: 156 30% 20%;
+    --muted-foreground: 156 10% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent - Solar Gold */
+    --accent: 38 92% 50%;
+    --accent-foreground: 156 79% 8%;
 
-    --destructive: 0 62.8% 30.6%;
+    /* Destructive - Loss Red */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Borders & Inputs */
+    --border: 156 30% 20%;
+    --input: 156 30% 20%;
+    --ring: 38 92% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gold: 38 92% 50%;
+    --gold-light: 43 96% 56%;
+    --gold-dark: 35 90% 42%;
+    --forest: 156 79% 8%;
+    --forest-light: 156 60% 16%;
+    --danger: 0 84% 60%;
+    --success: 142 76% 36%;
+    --light: 210 40% 98%;
+    --light-muted: 210 20% 90%;
+
+    /* Sidebar */
+    --sidebar-background: 156 79% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 156 79% 8%;
+    --sidebar-accent: 156 40% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 156 30% 20%;
+    --sidebar-ring: 38 92% 50%;
+  }
+
+  /* Light mode for specific sections */
+  .light-section {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
   }
 }
 
@@ -99,7 +85,147 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-gold {
+    @apply bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-lg;
+    @apply hover:brightness-110 hover:scale-105 transition-all duration-300;
+    @apply shadow-lg shadow-accent/30;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-gold-outline {
+    @apply border-2 border-accent text-accent font-semibold px-8 py-4 rounded-lg;
+    @apply hover:bg-accent hover:text-accent-foreground transition-all duration-300;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Glassmorphism Header */
+  .glass-header {
+    @apply backdrop-blur-xl bg-background/80 border-b border-border/50;
+  }
+
+  /* Premium Card */
+  .premium-card {
+    @apply bg-card rounded-2xl border border-border/50 p-6;
+    @apply shadow-xl shadow-black/20;
+    @apply hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500;
+  }
+
+  /* Light Card for contrast sections */
+  .light-card {
+    @apply bg-light rounded-2xl border border-light-muted p-6;
+    @apply shadow-lg shadow-black/5;
+    @apply hover:shadow-xl hover:border-accent/30 transition-all duration-500;
+  }
+
+  /* Badge styles */
+  .badge-gold {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full;
+    @apply bg-accent/20 text-accent font-medium text-sm;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full;
+    @apply bg-destructive/20 text-destructive font-medium text-sm;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+
+  /* Text highlight */
+  .text-gold {
+    @apply text-accent;
+  }
+
+  .text-danger {
+    @apply text-destructive;
+  }
+
+  /* Hero overlay */
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60;
+  }
+
+  /* Chart bar styles */
+  .bar-danger {
+    @apply bg-destructive rounded-t-lg;
+  }
+
+  .bar-success {
+    @apply bg-accent rounded-t-lg;
+  }
+
+  /* Video card hover */
+  .video-card {
+    @apply relative overflow-hidden rounded-2xl cursor-pointer;
+    aspect-ratio: 9/16;
+  }
+
+  .video-card::after {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent;
+    content: '';
+  }
+
+  /* Step indicator */
+  .step-circle {
+    @apply w-16 h-16 rounded-full border-2 border-border flex items-center justify-center;
+    @apply bg-card relative;
+  }
+
+  .step-circle::after {
+    @apply absolute -top-1 -right-1 w-6 h-6 rounded-full bg-accent text-accent-foreground;
+    @apply flex items-center justify-center text-xs font-bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Curve divider */
+  .curve-divider {
+    @apply absolute bottom-0 left-0 right-0 h-24 overflow-hidden;
+  }
+
+  .curve-divider svg {
+    @apply absolute bottom-0 w-full h-full;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
 }
