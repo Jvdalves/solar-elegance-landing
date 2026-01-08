@@ -31,7 +31,7 @@
                 <?php if (has_custom_logo()): ?>
                     <?php the_custom_logo(); ?>
                 <?php else: ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M12 2v2"></path>
                         <path d="M12 20v2"></path>
@@ -56,8 +56,8 @@
                     'fallback_cb'    => function() {
                         ?>
                         <a href="#beneficios">Benefícios</a>
-                        <a href="#tecnologia">Tecnologia</a>
-                        <a href="#depoimentos">Depoimentos</a>
+                        <a href="#como-funciona">Como Funciona</a>
+                        <a href="#simulador">Simulador</a>
                         <a href="#contato">Contato</a>
                         <?php
                     },
@@ -66,7 +66,7 @@
             </nav>
 
             <!-- Header CTA -->
-            <a href="#contato" class="btn btn-primary header-cta">
+            <a href="#simulador" class="btn btn-primary header-cta">
                 Simular Economia
             </a>
 
@@ -94,15 +94,15 @@
                 ?>
                 <nav class="mobile-nav">
                     <a href="#beneficios">Benefícios</a>
-                    <a href="#tecnologia">Tecnologia</a>
-                    <a href="#depoimentos">Depoimentos</a>
+                    <a href="#como-funciona">Como Funciona</a>
+                    <a href="#simulador">Simulador</a>
                     <a href="#contato">Contato</a>
                 </nav>
                 <?php
             },
         ));
         ?>
-        <a href="#contato" class="btn btn-primary btn-lg">Simular Economia</a>
+        <a href="#simulador" class="btn btn-primary btn-lg">Simular Economia</a>
     </div>
 </div>
 

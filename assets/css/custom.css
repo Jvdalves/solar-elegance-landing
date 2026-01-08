@@ -1,0 +1,22 @@
+/**
+ * Solux Energy - Custom CSS
+ * Add your custom styles here
+ *
+ * @package Solux_Energy
+ */
+
+/* Add any custom overrides or additional styles below */
+
+/* Example: Custom animation for spinning loader */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
